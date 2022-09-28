@@ -127,3 +127,43 @@ However, `/d` is a special character class that matches any digit. So, if we wan
 `[\d]`
 
 In our example code for mathching against an email, we see `/d` is present and is located after the `@` symbol. This ensures that a letter or number is present after the `@` symbol. This is because the `@` symbol is a special character that is used to separate the username from the domain name.
+
+### Greedy and Lazy Match
+
+In the given code for matching an email, there isn't a greedy or lazy match included.
+
+### Boundaries
+
+If in a string, we are looking for for specific words. Boundaries are not used in the given matching an email code.
+
+### Back-references
+
+Back-references are used to match a string that is the same as a previous match. For example, if we wanted to match against a string that contains the same word twice, we would use the following code:
+
+`(\w+)\s+\1`
+
+This will match against a string that contains a word followed by a space and then the same word again. In our example code for matching against an email, we see the following code:
+
+`([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$`
+
+This is an example of a back-reference. The first back-reference is matching against a string that contains a combination of `a-z`, `0-9`, `_\`, `.`, or `-` and then storing the string for later use. The second back-reference is matching against a string that contains a combination of `a-z`, `0-9`, `_\`, `.`, or `-` and then storing the string for later use. The third back-reference is matching against a string that contains a combination of `a-z` and `.` and then storing the string for later use.
+
+Back-references are not included in the given code.
+
+### Look-ahead and Look-behind
+
+Look-ahead and look-behind are used to match a string that is followed by another string. For example, if we wanted to match against a string that contains a `b` and then is followed by a `c`, we would use the following code:
+
+`(?=bc)`.
+
+This will match against a string that contains a `b` and then is followed by a `c`. In our example code for matching against an email, we see the following code:
+
+`([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$`
+
+This is an example of a look-ahead. The first look-ahead is matching against a string that contains a combination of `a-z`, `0-9`, `_\`, `.`, or `-` and then storing the string for later use. The second look-ahead is matching against a string that contains a combination of `a-z`, `0-9`, `_\`, `.`, or `-` and then storing the string for later use. The third look-ahead is matching against a string that contains a combination of `a-z` and `.` and then storing the string for later use.
+
+Look-ahead and look-behind are not included in the given code.
+
+## Author
+
+This tutorial was created by Sam March.
