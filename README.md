@@ -28,7 +28,7 @@ Matching Email-
 
 ### Anchors
 
-The anchor is a term, which defines the start and end of the expression.
+The anchor is a term which defines the start and end of the expression.
 In the matching email code below,
 
 `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`,
@@ -42,3 +42,11 @@ notice this missing `/`. Don't worry about everything inside the parentheses jus
 `.([a-z\.]{2,6})$`.
 
 So, it must start and end with the given parameters within the code. If it does not, then it is not a match.
+
+### Quantifiers
+
+Quantifiers are used to determine how many occurences that a specific character or group of characters must to be present in order to have a correct match. For example, if we used the following code in our expression, `xyz+`, then this will attempt to match any string of `xy` followed by at least one `z`. Now lets take a look at our code for matching the email below:
+
+`([a-z0-9_\.-]+)`
+
+As we can see, this will match against any string that contains `a-z`, `0-9`, `_\`, `.`, or `-`. The quantifier `+` is there to show us that the string has to contain at least one of these in order to match correctly.
