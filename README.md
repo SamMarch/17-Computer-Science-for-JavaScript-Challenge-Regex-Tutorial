@@ -50,3 +50,20 @@ Quantifiers are used to determine how many occurences that a specific character 
 `([a-z0-9_\.-]+)`
 
 As we can see, this will match against any string that contains `a-z`, `0-9`, `_\`, `.`, or `-`. The quantifier `+` is there to show us that the string has to contain at least one of these in order to match correctly.
+
+### OR Operator
+
+The 'OR' Operator is not present in our example code for matching against an email, so for now, in order to talk about the OR Operator, we will take a look at the following code for matching against a hex code:
+
+`/^#?([a-f0-9]{6}|[a-f0-9]{3})$/`
+
+What we see here, is an expression for matching a hex code that uses the OR Operator.
+What this operator does is look for a matching string where it starts with a `#` first followed by one of the following:
+
+`[a-f0-9]{6}` this will match a 6 character long string which contains a combination of `a-f` letters and `0-9` numbers.
+
+`|` this is the OR Operator
+
+`[a-f0-9]{3}` this will match a 3 character long string that contains a combination of `a-f` letters and `0-9` numbers.
+
+Notice both of the above examples are referencing the same character class `[a-f0-9]`. This is because the OR Operator is looking for a match that starts with a `#` and then either a 6 character long string or a 3 character long string. It does not matter which one it is, as long as it starts with a `#` and then either a 6 character long string or a 3 character long string.
