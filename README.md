@@ -91,3 +91,15 @@ then we would get a match because the `@` symbol is present and is followed by a
 `sammy.march@.com`
 
 then we would not get a match because the `@` symbol is present, but it is not followed by a letter or number.
+
+### Flags
+
+A flag is not used in the matching email code in this tutorial. A regular expression typically looks like this:
+
+`/pattern/flags`
+
+Where the slashes denote where the regular expresssion starts and ends. A flag can be used after the slash to provide more guidelines for matching. The flags are:
+
+- `g` which stands for "global" which will allow for matching all the instances within a string that follow the matching guidelines set in the regular expression.
+- `m` which stands for "multiline" which will search line by line rather than searching through a string as a whole.
+- `i` which stands for "insensitive" will make the regular expression case-insensitive, so capitals and lower-case letters will not deture the matching.
