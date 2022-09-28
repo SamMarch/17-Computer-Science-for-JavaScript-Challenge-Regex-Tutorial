@@ -23,3 +23,22 @@ Matching Email-
 - [Boundaries](#boundaries)
 - [Back-references](#back-references)
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
+
+## Regex Components
+
+### Anchors
+
+The anchor is a term, which defines the start and end of the expression.
+In the matching email code below,
+
+`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`,
+
+the anchors are the `^` and the `$`. This code is specifically saying that we are looking for something that starts with
+
+`^([a-z0-9_\.-]+)`
+
+notice this missing `/`. Don't worry about everything inside the parentheses just yet, as we we will define what they are later in this tutorial. So for now, what we know is that the anchors are the start and end of a string, which means that if we are to find a match it has follow those guidelines. It also has to end with,
+
+`.([a-z\.]{2,6})$`.
+
+So, it must start and end with the given parameters within the code. If it does not, then it is not a match.
