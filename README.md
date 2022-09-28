@@ -67,3 +67,27 @@ What this operator does is look for a matching string where it starts with a `#`
 `[a-f0-9]{3}` this will match a 3 character long string that contains a combination of `a-f` letters and `0-9` numbers.
 
 Notice both of the above examples are referencing the same character class `[a-f0-9]`. This is because the OR Operator is looking for a match that starts with a `#` and then either a 6 character long string or a 3 character long string. It does not matter which one it is, as long as it starts with a `#` and then either a 6 character long string or a 3 character long string.
+
+### Character Classes
+
+Character classes are used to match a single character out of a group of characters. For example, if we wanted to match against a string that contains either a `b` or a `c`, we would use the following code:
+
+`[bc]`
+
+However, `/d` is a special character class that matches any digit. So, if we wanted to match against a string that contains a digit, we would use the following code:
+
+`[\d]`
+
+In our example code for mathching against an email, we see `/d` is present and is located after the `@` symbol. This ensures that a letter or number is present after the `@` symbol. This is because the `@` symbol is a special character that is used to separate the username from the domain name. So, if we were to use the following code:
+
+`([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$`
+
+and we were to use the following email:
+
+`sammy.march@hotmail.com`
+
+then we would get a match because the `@` symbol is present and is followed by a letter or number. However, if we were to use the following email:
+
+`sammy.march@.com`
+
+then we would not get a match because the `@` symbol is present, but it is not followed by a letter or number.
