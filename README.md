@@ -103,3 +103,27 @@ Where the slashes denote where the regular expresssion starts and ends. A flag c
 - `g` which stands for "global" which will allow for matching all the instances within a string that follow the matching guidelines set in the regular expression.
 - `m` which stands for "multiline" which will search line by line rather than searching through a string as a whole.
 - `i` which stands for "insensitive" will make the regular expression case-insensitive, so capitals and lower-case letters will not deture the matching.
+
+### Grouping and Capturing
+
+Grouping and capturing is used to match a group of characters and then store them for later use. For example, if we wanted to match against a string that contains a `b` followed by a `c` and then store the `b` and the `c` for later use, we would use the following code:
+
+`([bc])`
+
+This will match against a string that contains a `b` or a `c` and then store the `b` or the `c` for later use. In our example code for matching against an email, we see the following code:
+
+`([a-z0-9_\.-]+)` and `([\da-z\.-]+)` and `([a-z\.]{2,6})`
+
+These are all examples of grouping and capturing. The first one is matching against a string that contains a combination of `a-z`, `0-9`, `_\`, `.`, or `-` and then storing the string for later use. The second one is matching against a string that contains a combination of `a-z`, `0-9`, `_\`, `.`, or `-` and then storing the string for later use. The third one is matching against a string that contains a combination of `a-z` and `.` and then storing the string for later use.
+
+### Bracket Expressions
+
+Bracket expressions are used to match a single character out of a group of characters. For example, if we wanted to match against a string that contains either a `b` or a `c`, we would use the following code:
+
+`[bc]`
+
+However, `/d` is a special character class that matches any digit. So, if we wanted to match against a string that contains a digit, we would use the following code:
+
+`[\d]`
+
+In our example code for mathching against an email, we see `/d` is present and is located after the `@` symbol. This ensures that a letter or number is present after the `@` symbol. This is because the `@` symbol is a special character that is used to separate the username from the domain name.
